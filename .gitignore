@@ -1,0 +1,19 @@
+node_modules/
+
+# Secrets
+.env
+.env.local
+
+# Runtime state: session cookies, tokens, job database, locks.
+# storageState files contain live credentials — never commit them.
+state/
+*.sqlite
+*.sqlite-journal
+*.lock
+
+# Evidence: screenshots, page HTML, traces
+artifacts/
+playwright-report/
+test-results/
+
+.DS_Store

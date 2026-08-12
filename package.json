@@ -1,0 +1,35 @@
+{
+  "name": "prime-crm-automation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Browser automation harness that logs into Prime CRM as an external system would and creates a lead, treating that write as an irreversible side effect.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc --noEmit",
+    "run:job": "tsx src/cli.ts run",
+    "review": "tsx src/cli.ts review",
+    "jobs": "tsx src/cli.ts list",
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:unit": "node --test --import tsx tests/unit/*.test.ts",
+    "verify": "npm run build && npm run test:unit && npm run test",
+    "install:browsers": "playwright install chromium"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.7.0",
+    "dotenv": "^16.4.7",
+    "otplib": "^12.0.1",
+    "pino": "^9.6.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/node": "^22.10.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
+}
